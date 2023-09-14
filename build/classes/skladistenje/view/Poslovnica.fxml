@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skladistenje.controller.PoslovnicaController">
+   <children>
+      <Label fx:id="loginMsg" alignment="CENTER" layoutX="114.0" layoutY="5.0" prefHeight="18.0" prefWidth="339.0" />
+      <TabPane layoutX="-2.0" layoutY="31.0" prefHeight="366.0" prefWidth="594.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#Artikli" text="Artikli">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="170.0" prefWidth="337.0">
+                     <children>
+                        <TableView fx:id="artikliTbl" layoutY="6.0" prefHeight="301.0" prefWidth="314.0">
+                          <columns>
+                            <TableColumn fx:id="NazivTXT" prefWidth="75.0" text="Naziv" />
+                              <TableColumn fx:id="OpisTxt" prefWidth="156.79998779296875" text="Opis" />
+                              <TableColumn fx:id="KolicinaId" prefWidth="80.79998779296875" text="Količina" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab onSelectionChanged="#Zahtjev" text="Zahtjev">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ComboBox fx:id="ArtikalCombo" layoutX="21.0" layoutY="43.0" prefWidth="150.0" promptText="Odaberite artikal" />
+                        <TextField fx:id="kolicinaId" layoutX="22.0" layoutY="101.0" promptText="Unesite količinu :" />
+                        <Button layoutX="39.0" layoutY="199.0" mnemonicParsing="false" onAction="#SpremiZahtjev" prefHeight="26.0" prefWidth="84.0" text="Spremi" />
+                        <TextField fx:id="napomenaTxt" layoutX="22.0" layoutY="150.0" promptText="upisite napomenu" />
+                        <Label fx:id="porukaLbl" alignment="CENTER" layoutX="39.0" layoutY="255.0" prefHeight="18.0" prefWidth="337.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab onSelectionChanged="#odjava" text="Odjava">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skladistenje.controller.SkladistaController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#izlistajSkladista" text="Skladista">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutY="3.0" prefHeight="362.0" prefWidth="606.0">
+                           <children>
+                              <TableView fx:id="skladisteTbl" prefHeight="329.0" prefWidth="366.0">
+                                <columns>
+                                  <TableColumn fx:id="skladisteIdColl" prefWidth="38.4000244140625" text="ID" />
+                                  <TableColumn fx:id="skladisteGradColl" prefWidth="131.20001220703125" text="Grad" />
+                                    <TableColumn fx:id="skladisteNazivColl" prefWidth="90.39996337890625" text="Naziv" />
+                                    <TableColumn fx:id="skladisteSkladistarColl" prefWidth="104.0" text="Skladistar" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Dodaj Skladiste">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="gradUnos" layoutX="14.0" layoutY="73.0" />
+                        <TextField fx:id="skladisteUnos" layoutX="14.0" layoutY="178.0" />
+                        <Label layoutX="17.0" layoutY="24.0" prefHeight="30.0" prefWidth="144.0" text="Grad skladišta:" />
+                        <Label layoutX="17.0" layoutY="137.0" prefHeight="31.0" prefWidth="145.0" text="Naziv Skladišta:" />
+                        <Button fx:id="spremiSkladisteBtn" layoutX="37.0" layoutY="296.0" mnemonicParsing="false" onAction="#spremiSkladiste" text="Spremi" />
+                        <Label fx:id="porukaLbL" layoutX="342.0" layoutY="137.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+          <Tab onSelectionChanged="#popuniSkladistare" text="Dodaj Skladistara">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutY="-1.0" prefHeight="370.0" prefWidth="600.0">
+                           <children>
+                              <Label layoutX="21.0" layoutY="23.0" prefHeight="38.0" prefWidth="116.0" text="Korisničko ime" />
+                              <Label layoutX="21.0" layoutY="95.0" prefHeight="38.0" prefWidth="143.0" text="Korisnička lozinka" />
+                              <TextField fx:id="korisnickoImeTxt" layoutX="21.0" layoutY="70.0" promptText="Unesite korisnicko ime:" />
+                              <PasswordField fx:id="KorisnickaLozinkaTxt" layoutX="21.0" layoutY="145.0" promptText="************" />
+                              <Button layoutX="25.0" layoutY="300.0" mnemonicParsing="false" onAction="#spremiSkladistara" text="Spremi" />
+                              <ComboBox fx:id="skladistarList" layoutX="20.0" layoutY="201.0" prefHeight="25.0" prefWidth="216.0" promptText="odaberite skladiste" />
+                              <Label fx:id="SkladistarPorukaLbl" alignment="CENTER" layoutX="20.0" layoutY="243.0" prefHeight="25.0" prefWidth="386.0" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

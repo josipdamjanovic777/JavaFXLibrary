@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="skladistenje.controller.ArtikliAdministracijaController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab onSelectionChanged="#izlistajArtikle" text="Artikli">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="aritkliTbl" layoutX="-2.0" layoutY="-1.0" prefHeight="306.0" prefWidth="342.0">
+                          <columns>
+                            <TableColumn fx:id="idCol" prefWidth="46.399993896484375" text="ID" />
+                            <TableColumn fx:id="NazivCol" prefWidth="74.39996337890625" text="Naziv" />
+                              <TableColumn fx:id="OpisCol" prefWidth="264.800048828125" text="Opis" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="14.0" layoutY="320.0" mnemonicParsing="false" onAction="#ukloniArtikal" text="Ukloni" />
+                        <Pane fx:id="updatePane" layoutX="340.0" layoutY="6.0" prefHeight="226.0" prefWidth="238.0" visible="false">
+                           <children>
+                              <Label layoutX="33.0" layoutY="40.0" prefHeight="17.0" prefWidth="84.0" text="Naziv" />
+                              <TextField fx:id="UrediNazivTxt" layoutX="33.0" layoutY="69.0" />
+                              <Label layoutX="33.0" layoutY="113.0" text="Opis" />
+                              <TextField fx:id="UrediOpisTxt" layoutX="33.0" layoutY="143.0" />
+                              <Button layoutX="30.0" layoutY="187.0" mnemonicParsing="false" onAction="#azurirajArtikal" text="Spremi" />
+                              <Label fx:id="idUpdate" text="Label" visible="false" />
+                           </children>
+                        </Pane>
+                        <Button layoutX="107.0" layoutY="320.0" mnemonicParsing="false" onAction="#pripremiAzuriranjeArtikla" text="Uredi" />
+                        <Label fx:id="UrediLbl" layoutX="374.0" layoutY="275.0" prefHeight="18.0" prefWidth="207.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Dodavanje Artikla">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="26.0" layoutY="44.0" prefHeight="18.0" prefWidth="91.0" text="Naziv" />
+                        <TextField fx:id="nazivTxt" layoutX="26.0" layoutY="76.0" promptText="Unesite naziv artikla" />
+                        <Label layoutX="26.0" layoutY="121.0" prefHeight="31.0" prefWidth="238.0" text="Opis" />
+                        <TextField fx:id="opisTxt" layoutX="26.0" layoutY="166.0" promptText="Opis artikla" />
+                        <Button layoutX="26.0" layoutY="274.0" mnemonicParsing="false" onAction="#spremiArtikal" text="Spremi" />
+                        <Label fx:id="artikalPorukaLbl" layoutX="147.0" layoutY="278.0" prefHeight="18.0" prefWidth="321.0">
+                           <cursor>
+                              <Cursor fx:constant="N_RESIZE" />
+                           </cursor>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
